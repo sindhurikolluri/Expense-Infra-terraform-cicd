@@ -2,13 +2,13 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.84.0"
+      version = ">= 5.93.0"
     }
   }
 
   backend "s3" {
     bucket = "expense-infra"
-    key    = "expense-eks" # you should have unique keys with in the bucket, same key should not be used in other repos or tf projects
+    key    = "expense-infra-ingress" # you should have unique keys with in the bucket, same key should not be used in other repos or tf projects
     region = "us-east-1"
     dynamodb_table = "expense-infra"
   }
